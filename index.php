@@ -27,16 +27,7 @@
            header("Location:pleaselogin.html");
          }
          ?>
-      <script>
-         var renderPage = true;
-
-         if(navigator.userAgent.indexOf('MSIE')!==-1
-         || navigator.appVersion.indexOf('Trident/') > 0){
-
-          		alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
-          		renderPage = false;
-         }
-      </script>
+      
       <div class="fl_right">
          <ul>
             <li><a href=login.html>Login</a></li>
