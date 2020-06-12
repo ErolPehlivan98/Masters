@@ -360,12 +360,11 @@
 
                	$("#tm-section-1").fadeIn();
 
-              	
+
               	var bgImg = $("#tmNavLink1").data("bgImg");
 
               	$.backstretch("img/" + bgImg, {fade: 500});
 
-              	// Setup Carousel, Nav, and Nav Toggle
          	    setupCarousel();
          	    setupNav();
          	    setupNavToggle();
