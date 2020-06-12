@@ -332,7 +332,7 @@
          			}
          		}
 
-         		
+
              	$(window).on("load", function(){
 
 
@@ -355,7 +355,7 @@
          	    	});
          	    }
 
-               	// Hide all pages
+               	
                	allPages.hide();
 
                	$("#tm-section-1").fadeIn();
