@@ -332,13 +332,13 @@
          			}
          		}
 
-         		// Everything is loaded including images.
+         		
              	$(window).on("load", function(){
 
 
-								
+
              		if(renderPage) {
-         		// Remove loader
+
                	$('body').addClass('loaded');
 
 
