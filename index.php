@@ -355,12 +355,12 @@
          	    	});
          	    }
 
-               	
+
                	allPages.hide();
 
                	$("#tm-section-1").fadeIn();
 
-              	// Set up background first page
+              	
               	var bgImg = $("#tmNavLink1").data("bgImg");
 
               	$.backstretch("img/" + bgImg, {fade: 500});
