@@ -1,15 +1,14 @@
 <?php
 
 //get connection
-$conn=new PDO("mysql:host=localhost;dbname=money", "root");
-$money = $_POST["field2"];
+$conn=new PDO("mysql:host=localhost;dbname=web", "root");
 $user = $_POST["user"];
 $date = $_POST["date"];
 
 if(!$conn){
   die("Connection failed: " . $conn->error);
 }
-$sql ="INSERT INTO money (username,monseyspent,dateentered) VALUES ('$user','$money','$date')";
+$sql ="DELETE FROM money_amount WHERE username = '$user' AND dateentered = '$date'";
 
 $conn->query($sql);
 

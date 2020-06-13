@@ -99,10 +99,10 @@ error_reporting(E_ALL);
 										<div class="flexcont2">
                      <div class="container1">
                            <h3> Add to system </h3>
-                           <form class="addform" action="/action_page.php">
+                           <form class="addform" method="post" action="moneyspent.php">
                               <div class="form-group">
                                  <label for="email">Todays spending:</label>
-                                 <input type="email" class="form-control" id="email" placeholder="Enter amount" name="field2">
+                                 <input type="number" class="form-control" id="number" placeholder="Enter amount" name="field2">
                               </div>
                               <div class="form-group">
                                  <label for="pwd">Date:</label>
@@ -114,10 +114,10 @@ error_reporting(E_ALL);
                         </div>
                         <div class="container2">
                            <h3> Edit your spendings </h3>
-                           <form class="editform" action="/action_page.php">
+                           <form class="editform" method="post"action="editmoney.php">
                               <div class="form-group">
                                  <label for="email">Todays spending:</label>
-                                 <input type="email" class="form-control" id="email" placeholder="Enter amount" name="field2">
+                                 <input type="number" class="form-control" id="number" placeholder="Enter amount" name="field2">
                               </div>
                               <div class="form-group">
                                  <label for="pwd">Date:</label>
@@ -172,7 +172,7 @@ error_reporting(E_ALL);
 
 
 
-                        					$columnChart = new FusionCharts("column3D", "myFirstChart" ,1063, 300, "chart-1", "json", $jsonEncodedData);
+                        					$columnChart = new FusionCharts("column3D", "myFirstChart" ,1060, 300, "chart-1", "json", $jsonEncodedData);
 
 
                         					$columnChart->render();
@@ -191,7 +191,7 @@ error_reporting(E_ALL);
 									 <div class="flexcont4">
                      <div class="container2">
                         <h3> Delete your entry </h3>
-                        <form class="editform" action="/action_page.php">
+                        <form class="editform" method="post" action="delete.php">
                            <div class="form-group">
                               <label for="pwd">Date:</label>
                               <input type="date" class="form-control" id="pwd" placeholder="date" name="date">
