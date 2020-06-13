@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
    <head>
       <meta charset="utf-8">
@@ -20,14 +20,29 @@
       <link rel="stylesheet" href="css/flexboxgrid.min.css" type="text/css">
       <link rel="stylesheet" href="style.css"/>
 			<link rel="stylesheet" href="flexbox.css"/>
-      <?php
+
+       <?php
+       ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
          session_start();
          $un =$_SESSION["login_key"];
          if(!isset($_SESSION['login_key'])){
            header("Location:pleaselogin.html");
          }
          ?>
-      
+
+
+      <script>
+         var renderPage = true;
+
+         if(navigator.userAgent.indexOf('MSIE')!==-1
+         || navigator.appVersion.indexOf('Trident/') > 0){
+
+          		alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
+          		renderPage = false;
+         }
+      </script>
       <div class="fl_right">
          <ul>
             <li><a href=login.html>Login</a></li>
@@ -124,7 +139,7 @@
                         if ($dbhandle->connect_error) {
                         		exit("There was an error with your connection: ".$dbhandle->connect_error);
                         	 }
-                        	$strQuery = "SELECT moneyspent, username, dateentered  FROM money WHERE username = '$un'";
+                        	$strQuery = "SELECT moneyspent, username, dateentered  FROM money_amount WHERE username = '$un'";
 
 
                         			$result = $dbhandle->query($strQuery) or exit("Error code ({$dbhandle->errno}): {$dbhandle->error}");
@@ -323,19 +338,20 @@
          			}
          		}
 
-
+         		// Everything is loaded including images.
              	$(window).on("load", function(){
 
-
-
+             		// Render the page on modern browser only.
              		if(renderPage) {
-
+         		// Remove loader
                	$('body').addClass('loaded');
 
-
+               	// Page transition
                	var allPages = $(".tm-section");
 
-
+               	// Handle click of "Continue", which changes to next page
+               	// The link contains data-nav-link attribute, which holds the nav item ID
+               	// Nav item ID is then used to access and trigger click on the corresponding nav item
                	var linkToAnotherPage = $("a.tm-btn[data-nav-link]");
 
          	    if(linkToAnotherPage != null) {
@@ -346,16 +362,17 @@
          	    	});
          	    }
 
-
+               	// Hide all pages
                	allPages.hide();
 
                	$("#tm-section-1").fadeIn();
 
-
+              	// Set up background first page
               	var bgImg = $("#tmNavLink1").data("bgImg");
 
               	$.backstretch("img/" + bgImg, {fade: 500});
 
+              	// Setup Carousel, Nav, and Nav Toggle
          	    setupCarousel();
          	    setupNav();
          	    setupNavToggle();
