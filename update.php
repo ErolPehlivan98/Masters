@@ -1,5 +1,5 @@
 <?php
-
+$rest2 =[null];
 //get connection
 $conn=new PDO("mysql:host=localhost;dbname=web", "root");
 $moneyy = $_POST["field2"];
@@ -9,9 +9,13 @@ $date = $_POST["date"];
 if(!$conn){
   die("Connection failed: " . $conn->error);
 }
-$sql ="UPDATE money_amount SET moneyspent ='$moneyy'  WHERE username='$user' AND dateentered='$date'";
+$sql ="UPDATE money_amount SET moneyspent = ?  WHERE username=? AND dateentered=?";
+$res2 = $conn->prepare($sql);
 
-$conn->query($sql);
+
+$res2->execute(array($moneyy,$user,$date));
+
+
 
 header("Location:index.php");
 ?>

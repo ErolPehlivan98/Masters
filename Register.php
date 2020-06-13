@@ -1,5 +1,5 @@
 <?php
-session_start();2
+session_start();
 $res2 = [null];
 $res = [null];
 $username = $_POST["username"];
