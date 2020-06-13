@@ -114,7 +114,7 @@ error_reporting(E_ALL);
                         </div>
                         <div class="container2">
                            <h3> Edit your spendings </h3>
-                           <form class="editform" method="post"action="editmoney.php">
+                           <form class="editform" method="post"action="update.php">
                               <div class="form-group">
                                  <label for="email">Todays spending:</label>
                                  <input type="number" class="form-control" id="number" placeholder="Enter amount" name="field2">
