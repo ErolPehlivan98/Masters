@@ -1,5 +1,6 @@
 <?php
-
+session_start();2
+$res2 = [null];
 $res = [null];
 $username = $_POST["username"];
 $password = $_POST["pass"];
@@ -19,9 +20,11 @@ if ($res =$conn->query($sql2))
 else{
 
 
-$sql ="INSERT INTO login (username,password) VALUES ('$username','$password')";
+$sql ="INSERT INTO login (username,password) VALUES (?,?)";
+$res2 = $conn->prepare($sql);
 
-$conn->query($sql);
+
+$res2->execute(array($username, $password));
 
 header("Location:index.php");
 $_SESSION["login_key"] = "$username";

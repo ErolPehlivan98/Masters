@@ -64,7 +64,7 @@
                         <li>
                            <a href="#Login" id="tmNavLink1" class="scrolly active" data-bg-img="constructive_bg_01.jpg" data-page="#tm-section-1">
                            <i class="fas fa-home tm-nav-fa-icon"></i>
-                           <span>Login</span>
+                           <span>Home</span>
                            </a>
                         </li>
                         <li>
