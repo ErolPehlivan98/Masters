@@ -22,14 +22,10 @@
 			<link rel="stylesheet" href="flexbox.css"/>
 
        <?php
-       ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
          session_start();
          $un =$_SESSION["login_key"];
          if(!isset($_SESSION['login_key'])){
-           header("Location:pleaselogin.html");
-         }
+           header("Location:Login.html");}
          ?>
 
 
@@ -89,7 +85,7 @@ error_reporting(E_ALL);
                      <header class="mb-4">
                         <h1 class="tm-text-shadow">Welcome</h1>
                      </header>
-                     <p class="mb-5 tm-font-big">Log in to the system to measure your daily financial spendings on a column chart in the next section of the page!</p>
+                     <p class="mb-5 tm-font-big">Welcome to the system, please navigate through the page to edit your data!</p>
                      <!-- data-nav-link holds the ID of nav item, which means this link should behave the same as that nav item  -->
                   </div>
                </section>
@@ -172,7 +168,7 @@ error_reporting(E_ALL);
 
 
 
-                        					$columnChart = new FusionCharts("column3D", "myFirstChart" ,1060, 300, "chart-1", "json", $jsonEncodedData);
+                        					$columnChart = new FusionCharts("column3D", "myFirstChart" ,800, 300, "chart-1", "json", $jsonEncodedData);
 
 
                         					$columnChart->render();
