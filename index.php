@@ -168,7 +168,7 @@
 
 
 
-                        					$columnChart = new FusionCharts("column3D", "myFirstChart" ,800, 300, "chart-1", "json", $jsonEncodedData);
+                        					$columnChart = new FusionCharts("column3D", "myFirstChart" ,935, 300, "chart-1", "json", $jsonEncodedData);
 
 
                         					$columnChart->render();
