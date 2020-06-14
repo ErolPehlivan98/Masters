@@ -1,8 +1,6 @@
 <?php
-
+$row2=[null];
 session_start();
-
-
 $username = $_POST["username"];
 $password = $_POST["pass"];
 
@@ -18,18 +16,33 @@ if($row==false)
 </script>';
 
 }
+
 else
 {
-	$res2 =[null];
+
 	$result2=("SELECT  FROM login WHERE username= ? AND password= ? ");
 
 	$res2 = $conn->prepare($result2);
 
 
 	$res2->execute(array($username, $password));
-
-/*$res2->execute(array($username, $password));*/
-	header("Location: index.php");
-	$_SESSION["login_key"] = "$username";
 }
+	/*$result3=$conn->query("SELECT user_type FROM login WHERE username='$username' AND password='$password'");
+		$row2=$result3->fetch();
+
+
+		if ($row2 == "admin") {*/
+			header("Location: index.php");
+	/*	}
+		else {
+			header("Location: admin.php");
+		}*/
+
+
+
+
+
+
+	$_SESSION["login_key"] = "$username";
+
 ?>
